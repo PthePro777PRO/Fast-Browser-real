@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Tab</title>
+
+  <style>
+    :root{
+      --main-bg-color: #16161F;
+      --box-bg-color: #1A1B27;
+      --input-bg-color: #16161F;
+      --box-shadow-color: #161620;
+      --text-color: #A6ABCA;
+      --command-color: #676B87;
+
+      --first-child-color: #D15975;
+      --second-child-color: #9B75C7;
+      --third-child-color: #547741;
+      --fourth-child-color: #5F88D3;
+      --fifth-child-color: #E1844F;
+
+      --column-count: 3;
+    }
+
+    html {
+      align-items: center;
+      background-color: var(--main-bg-color);
+      display: flex;
+      font: 22px/1 "Inconsolata", monospace;
+      height: 100%;
+      justify-content: center;
+    }
+
+    body {
+      background-color: var(--box-bg-color);
+      border-radius: 2px;
+      box-shadow: 1px 1px 6px var(--box-shadow-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 17ch;
+      min-width: 50vw;
+      padding: 2em;
+      border-radius: 15px;
+    }
+
+      input, input:focus, input:active {
+          background: #3a3c4b;
+          border: 20px;
+          border-style: none;
+          border-color: var(--input-bg-color);
+          border-radius: 15px;
+          outline: 20px;
+          outline-offset: 0;
+          box-shadow: none;
+          caret-color: transparent;
+          font: 22px/1 "Inconsolata", monospace;
+          color: var(--text-color);
+          height: 20px;
+          cursor: default !important;
+      }
+      input:hover, input:focus{
+              background: #4d4f62;
+              border: 20px;
+              border-style: none;
+              border-color: var(--input-bg-color);
+              border-radius: 15px;
+              outline: 20px;
+              outline-offset: 0;
+              box-shadow: none;
+              caret-color: transparent;
+              font: 22px/1 "Inconsolata", monospace;
+              color: var(--text-color);
+              height: 20px;
+              cursor: default !important;
+      }
+          input:active {
+              background: #757896;
+              border: 20px;
+              border-style: none;
+              border-color: var(--input-bg-color);
+              border-radius: 15px;
+              outline: 20px;
+              outline-offset: 0;
+              box-shadow: none;
+              caret-color: transparent;
+              font: 22px/1 "Inconsolata", monospace;
+              color: var(--text-color);
+              height: 20px;
+              cursor: default !important;
+          }
+
+          p {
+              margin: 0;
+          }
+
+      p span {
+          color: var(--command-color);
+      }
+
+      a {
+          color: inherit;
+          text-decoration: none;
+      }
+
+    a:focus,
+    a:hover {
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      column-gap: 2em;
+      display: grid;
+      grid-template-columns: repeat(var(--column-count), auto);
+      padding: 1em 0;
+    }
+
+    ul:nth-child(5n + 1) li:first-child {
+      color: var(--first-child-color);
+    }
+
+    ul:nth-child(5n + 2) li:first-child {
+      color: var(--second-child-color);
+    }
+    
+    ul:nth-child(5n + 3) li:first-child {
+      color: var(--third-child-color);
+    }
+    
+    ul:nth-child(5n + 4) li:first-child {
+      color: var(--fourth-child-color);
+    }
+
+    ul:nth-child(5n + 5) li:first-child {
+      color: var(--fifth-child-color);
+    }
+
+    li:first-child {
+      font-weight: bold;
+    }
+
+    li:last-child {
+      margin: 0 0 1em;
+    }
+  </style>
+  <script>
+    function setFocusToTextBox(){
+        document.getElementById("input").focus();
+    }
+  </script>
+</head>
+<body onload="setFocusToTextBox()">
+  <p>New Tab</p>
+
+  <nav>
+    <ul>
+      <li>General</li>
+      <li><a href="https://google.com">> Google</a></li>
+      <li><a href="https://youtube.com">> Youtube</a></li>
+      <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AVQVeyz6XRrCD8gUy9vzQlkEOe-NSv3sDSN6tTx4qU4D7ChbZb4cJqNqUGxf-jfonhRvwiHUMMPv9g&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1224814129%3A1698416043407594&theme=glif">> GMail</a></li>
+    </ul>
+
+    <ul>
+      <li>Developer</li>
+      <li><a href="https://github.com">> Github</a></li>
+      <li><a href="https://python.org">> Python</a></li>
+    </ul>
+  </nav>
+  <form action="http://www.google.com/search">
+    <li>Google Search</li>
+    <input type="text" name="q" size="60" id="input" autocomplete="off" spellcheck="false">
+  </form>
+
+</body>
+</html>
